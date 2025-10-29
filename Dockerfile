@@ -18,4 +18,4 @@ RUN chmod +x start.sh
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["./start.sh"]
+CMD ["bash", "start.sh"]
