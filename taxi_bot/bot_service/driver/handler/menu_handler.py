@@ -115,14 +115,19 @@ def handle_statistics(update: Update, context: CallbackContext) -> int:
     driver = DriverService.get_driver_by_telegram_id(telegram_id)
 
     if driver:
+        # TODO: Calculate today's, week's and month's earnings
+        today_earnings = 0
+        week_earnings = 0
+        month_earnings = 0
+
         stats_message = f"""
 📊 {translations['earnings_summary'][language].format(
     balance=driver.balance,
     total_rides=driver.total_rides,
     rating=driver.average_rating,
-    today_earnings=0,  # TODO: Calculate today's earnings
-    week_earnings=0,   # TODO: Calculate week's earnings
-    month_earnings=0   # TODO: Calculate month's earnings
+    today_earnings=today_earnings,
+    week_earnings=week_earnings,
+    month_earnings=month_earnings
 )}
         """.strip()
 
